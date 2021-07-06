@@ -117,5 +117,5 @@ alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 #Auto suggest config
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow,bg=black,bold,"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black"
 
