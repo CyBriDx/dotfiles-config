@@ -21,6 +21,15 @@
 	NeoBundle 'ctrlpvim/ctrlp.vim'
 	NeoBundle 'flazz/vim-colorschemes'
 	NeoBundle 'dhruvasagar/vim-table-mode'
+	NeoBundle 'preservim/nerdtree'
+	NeoBundle 'vim-airline/vim-airline'
+	NeoBundle 'vim-airline/vim-airline-themes'
+	NeoBundle 'kaicataldo/material.vim', { 'branch': 'main' }
+	NeoBundle 'ryanoasis/vim-devicons'
+	NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+	NeoBundle 'prettier/vim-prettier'
+
+
 
 	" Required:
 	call neobundle#end()
@@ -34,6 +43,34 @@
 
 "End NeoBundle Scripts-------------------------
 
+
+"Miscellaneous---------------------------------
+	
+	:set number
+	set encoding=UTF-8
+	:silent !<command>
+
+"End Miscellaneous-----------------------------
+
+
+
+"NerdTree--------------------------------------
+
+	let g:NERDTreeNodeDelimiter = "\u00a0"
+	nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+	" Exit Vim if NERDTree is the only window left.
+	autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+"End NerdTree----------------------------------
+
+
+"Prettier--------------------------------------
+
+	let g:prettier#autoformat_config_present = 1
+	let g:prettier#autoformat_config_files = ['.prettierrc']
+	let g:prettier#autoformat_require_pragma = 0
+
+"End Prettier----------------------------------
 
 "Table Mode------------------------------------
 
@@ -52,3 +89,21 @@
 	          \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
 "End Table Mode--------------------------------
+
+"Airline---------------------------------------
+
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#left_sep = ' '
+	let g:airline#extensions#tabline#left_alt_sep = '|'
+	let g:airline_powerline_fonts = 1
+
+"End Airline-----------------------------------
+
+
+"Color Scheme----------------------------------
+	
+	"let g:material_terminal_italics = 1
+	"let g:material_theme_style = 'dark'
+	"colorscheme material
+
+"End Color Scheme------------------------------
